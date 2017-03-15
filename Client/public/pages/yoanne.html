@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        <img src="public/img/YoauTop2.jpg" alt=""/>
+        <br>
+        <div id="divListArticles" ng-repeat="article in listArticles track by $index">
+            <div id="article{{$index}}">
+                <h2>{{article.title}}</h2>
+                {{article.date}}
+                <p>{{article.body}}</p>
+            </div>
+        </div>
+    </div>   
+</div>

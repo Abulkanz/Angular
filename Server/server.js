@@ -6,7 +6,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
+    password: 'admin',
     database: 'blog'
 });
 
@@ -32,8 +32,19 @@ connection.connect(function (err) {
         console.log('Example app listening at http://%s:%s', host, port);
     });
 
-    app.get('/path', bodyParser.json(), function (req, res) {
-        var query = 'query';
+    app.get('/getArticles', bodyParser.json(), function (req, res) {
+        var query = 'SELECT * FROM articles';
+        connection.query(query, function (err, result) {
+            if (err) {
+                console.error('error running query', err);
+            }
+            res.statusCode = 200;
+            res.send(result);
+        });
+    });
+    
+    app.get('/getCategories', bodyParser.json(), function (req, res) {
+        var query = 'SELECT * FROM catagories';
         connection.query(query, function (err, result) {
             if (err) {
                 console.error('error running query', err);
