@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-offset-4 col-md-4 text-center">
+        <img class="imgHaut" src="../img/killerBerthier.png" alt=""/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-6">
+        <div id="divListArticles" ng-repeat="article in listArticles track by $index">
+            <div id="article{{$index}}">
+                <h3>{{article.title}}</h3>
+                {{article.date| date}}
+                <p>{{article.body}}</p>
+                <a href="#article/{{article.idArticle}}">Consulter l'article</a>
+            </div>
+        </div>
+    </div>   
+</div>
+

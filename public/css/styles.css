@@ -1,0 +1,27 @@
+body{
+    font-family: 'Space Mono', monospace;
+}
+
+#libSite{
+    color: white;
+}
+
+.barreNav{
+    background-color: black;
+}
+
+.barreNav li a{
+    color: white;
+}
+
+#googleMap{
+    width: 50%;
+    height: 500px;
+    margin-left: 50vw;
+    margin-top: 50vh;
+    transform: translate(-50%, -50%);
+}
+
+.imgHaut{
+    margin-top: 1em;
+}
