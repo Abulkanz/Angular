@@ -1,13 +1,11 @@
 'use strict';
-//module('blog' = <html ng-app='blog'
-var blog = angular.module('blog', []);
 
 var blog = angular.module('blog', ['ngRoute']);
 blog.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
-                .when("/blog", {
-                    title: "Accueil",
+                .when("/yo", {
+                    title: "Yoanne",
                     templateUrl: "pages/yoanne.html",
                     controller: 'blogCtrl'
                 })
@@ -16,7 +14,7 @@ blog.config(['$routeProvider',
                     templateUrl: "pages/ajoutArt.html",
                     controller: 'ajoutCtrl'
                 })
-                .when("/article/:idArticle", {
+                .when("/article/:id", {
                     title: "Article",
                     templateUrl: "pages/article.html",
                     controller: 'artCtrl'
@@ -31,9 +29,9 @@ blog.config(['$routeProvider',
                     templateUrl: "pages/contact.html",
                     controller: 'blogCtrl'
                 })
-                .when("/Sport", {
-                    title: "Sport",
-                    templateUrl: "pages/sport.html",
+                .when("/acc", {
+                    title: "Portfolio - Accueil",
+                    templateUrl: "pages/accueil.html",
                     controller: 'blogCtrl'
                 })
                 .otherwise({

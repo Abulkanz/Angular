@@ -52,7 +52,7 @@ connection.connect(function (err) {
     });
 
     app.get('/getCategories', bodyParser.json(), function (req, res) {
-        var query = 'SELECT * FROM catagories';
+        var query = 'SELECT * FROM categories';
         connection.query(query, function (err, result) {
             if (err) {
                 console.error('error running query', err);
@@ -74,7 +74,7 @@ connection.connect(function (err) {
     });
 
     app.post('/getArticle', bodyParser.json(), function (req, res) {
-        var query = "SELECT * FROM articles WHERE idArticle =\"" + req.body.id + "\"" ;
+        var query = "SELECT * FROM articles WHERE idArticles =" + req.body.id;
         connection.query(query, function (err, result) {
             if (err) {
                 console.error('error running query', err);
